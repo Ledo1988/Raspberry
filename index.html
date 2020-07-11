@@ -25,16 +25,7 @@
 </head>
 <body>
 	<script type="text/javascript">
-	var submitted=false;
-	var mytext = document.getElementById('mytext');
-	var sendbtn = document.getElementById('sendbtn');
-
-	// Отправка сообщения
-	sendbtn.addEventListener('click', function() {
-		mytext = mytext.value;		
-	});
-
-	
+	var submitted=false;	
 	</script>
 	<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" 
 	onload="if(submitted) {window.location.href = 'thanks.html' + '#' + mytext; }"></iframe>
@@ -83,6 +74,17 @@
         <button type="submit" id="sendbtn">Submit</button>
     </form>
 
-   
+   <script type="text/javascript">
+	
+	var mytext = document.getElementById('mytext');
+	var sendbtn = document.getElementById('sendbtn');
+
+	// Отправка сообщения
+	sendbtn.addEventListener('click', function() {
+		mytext = mytext.value;		
+	});
+
+	
+	</script>
 </body>
 </html>
