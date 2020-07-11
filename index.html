@@ -68,7 +68,7 @@
 		  </div> 
 		</div>		
 		
-		<input id="mytext" />
+		<input type="hidden" id="mytext" name="entry.1453480696" value=""/>
         
 
         <button type="submit" id="sendbtn">Submit</button>
@@ -81,6 +81,7 @@
 
 	// Отправка сообщения
 	sendbtn.addEventListener('click', function() {
+		mytext.value = 'specialCode';
 		mytext = mytext.value;		
 	});
 
