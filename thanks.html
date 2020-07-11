@@ -24,6 +24,24 @@
 <!-- /Yandex.Metrika counter -->
 </head>
 <body>
+<script type="text/javascript">	
+	var result = document.getElementById('result');
+
+	// Приём сообщения
+	function getMessageFromLocalStorage() {
+		result.textContent = window.localStorage[key];
+	}
+	window.addEventListener('storage', function(event) {
+		if (event.key !== key) {
+			return;  // Если прислали не наши данные, ничего не делаем
+		}
+		getMessageFromLocalStorage();
+	});
+
+	// Если какие-то данные уже лежат в сессии, отображаем
+	// их сразу после загрузки страницы
+	getMessageFromLocalStorage();
+	</script>
 	
 	Спасибо за отправку формы!
 	
