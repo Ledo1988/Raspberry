@@ -26,22 +26,10 @@
 <body>
 <script type="text/javascript">	
 	var result = document.getElementById('result');
-	var key = 'ruso_q_712899_example';
-
-	// Приём сообщения
-	function getMessageFromLocalStorage() {
-		result.textContent = window.localStorage[key];
-	}
-	window.addEventListener('storage', function(event) {
-		if (event.key !== key) {
-			return;  // Если прислали не наши данные, ничего не делаем
-		}
-		getMessageFromLocalStorage();
-	});
-
-	// Если какие-то данные уже лежат в сессии, отображаем
-	// их сразу после загрузки страницы
-	getMessageFromLocalStorage();
+	var text = window.location.hash.substring(1);
+	
+	result.value = text;
+	
 	</script>
 	
 	Спасибо за отправку формы!

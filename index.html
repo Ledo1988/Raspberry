@@ -28,23 +28,16 @@
 	var submitted=false;
 	var mytext = document.getElementById('mytext');
 	var sendbtn = document.getElementById('sendbtn');
-	
-
-	// Ключ, которым мы будем именовать данные.
-	// Можно в качестве него использовать любую строку
-	// на ваш вкус
-	var key = 'ruso_q_712899_example';
 
 	// Отправка сообщения
 	sendbtn.addEventListener('click', function() {
-		window.localStorage[key] = mytext.value;
-		getMessageFromLocalStorage();
+		mytext = mytext.value;		
 	});
 
 	
 	</script>
 	<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" 
-	onload="if(submitted) {window.location='thanks.html'; }"></iframe>
+	onload="if(submitted) {window.location.href = 'thanks.html' + '#' + mytext; }"></iframe>
 
     <form method="POST"
           action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSerI_edzmfJtFgzKdZ-VCd2M3HTLdNCLGErguKTcpoW0L9umg/formResponse" target="hidden_iframe" onsubmit="submitted=true;">
