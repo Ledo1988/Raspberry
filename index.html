@@ -24,9 +24,27 @@
 <!-- /Yandex.Metrika counter -->
 </head>
 <body>
-	<script type="text/javascript">var submitted=false;</script>
+	<script type="text/javascript">
+	var submitted=false;
+	var mytext = document.getElementById('mytext');
+	var sendbtn = document.getElementById('sendbtn');
+	
+
+	// Ключ, которым мы будем именовать данные.
+	// Можно в качестве него использовать любую строку
+	// на ваш вкус
+	var key = 'ruso_q_712899_example';
+
+	// Отправка сообщения
+	sendbtn.addEventListener('click', function() {
+		window.localStorage[key] = mytext.value;
+		getMessageFromLocalStorage();
+	});
+
+	
+	</script>
 	<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" 
-	onload="if(submitted) {window.location='https://www.instagram.com/direct/t/340282366841710300949128133431288351219';}"></iframe>
+	onload="if(submitted) {window.location='thanks.html'; }"></iframe>
 
     <form method="POST"
           action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSerI_edzmfJtFgzKdZ-VCd2M3HTLdNCLGErguKTcpoW0L9umg/formResponse" target="hidden_iframe" onsubmit="submitted=true;">
@@ -66,10 +84,10 @@
 		  </div> 
 		</div>		
 		
-		
+		<input id="mytext" />
         
 
-        <button type=submit>Submit</button>
+        <button type="submit" id="sendbtn">Submit</button>
     </form>
 
    
