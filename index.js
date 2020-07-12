@@ -35,11 +35,11 @@ function switchForm() {
 				totalPercent =  totalPercent + Number.parseInt(rateReduce[i].dataset.type);
 			}
         } 
-		
+	// final rate 3785 & 4625 - 840 ice-cream	
 		if (iceRate > 0) {
-			rateReduction = Math.round(4860*totalPercent/100/5)*5;
+			rateReduction = Math.round(4700*totalPercent/100/5)*5;
 		} else {
-			rateReduction = Math.round(3975*totalPercent/100/5)*5;
+			rateReduction = Math.round(3800*totalPercent/100/5)*5;
 		}
 	}
 	
