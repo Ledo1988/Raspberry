@@ -1,0 +1,39 @@
+.form-group {
+	height: 0;	
+	opacity: 0;
+	transition: opacity .2s ease-in-out;
+	z-index: -1;
+	pointer-events: none;
+	overflow: hidden;
+}
+
+.form-group_active {
+	height: auto;	
+	opacity: 1;
+	transition: opacity .2s ease-in-out;
+	z-index: 1;
+	pointer-events: auto;
+	overflow: hidden;
+}
+
+.main-form__btn_disable {
+	opacity: 0.5;
+	transition: .2s ease-in-out;
+}
+
+.rate-bar__progress {
+	background-color: white;
+	border: 1px solid green;
+	margin: 8px 0;
+	height: 16px;
+	font-size: 0;
+	display: flex;	
+	border-radius: 5px;
+}
+
+.rate-bar__done {
+	display: block;
+	height: 100%;
+	width: 0;
+	background-color: green;
+}

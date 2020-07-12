@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="yandex-verification" content="a067670bf3d0dc4f" />
-    <title>Raspberry</title>
+    <title>RaspberryBox</title>
+	 <link rel="stylesheet" type="text/css" href="vendor/swiper/swiper.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 	<!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
@@ -24,18 +25,29 @@
 <!-- /Yandex.Metrika counter -->
 </head>
 <body>
-	<script type="text/javascript">
-	var submitted=false;	
-	</script>
+	<script type="text/javascript">var submitted=false;</script>
 	<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" 
 	onload="if(submitted) {window.location.href = 'thanks.html' + '#' + mytext; }"></iframe>
 
-    <form method="POST"
-          action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSerI_edzmfJtFgzKdZ-VCd2M3HTLdNCLGErguKTcpoW0L9umg/formResponse" target="hidden_iframe" onsubmit="submitted=true;">
+<div class="rate-bar">
+	<div class="rate-bar__rate">
+		<input type="hidden" id="myRate" value=""/>
+		<label for="myRate" class="rate-bar__rate-amount"><span class="rate-bar__rate-calc">0</span> руб.</label>		
+	</div>
+	<div class="rate-bar__progress">
+		<span class="rate-bar__done"></span>
+	</div>
+</div>
+
+
+
+    <div class="main-form_wrapper">
+	<form method="POST"
+          action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSerI_edzmfJtFgzKdZ-VCd2M3HTLdNCLGErguKTcpoW0L9umg/formResponse" target="hidden_iframe" onsubmit="submitted=true;" class="main-form">
 		
 		
 			
-		<div class="form-group" name="entry.1535204278">
+		<div class="form-group form-group_active" name="entry.1535204278">
 		  <label for="rsvpStatus" class="col-lg-2 control-label">Кого будем радовать?</label>
 		  <div class="radio-inline">
 			<label><input type="radio" name="entry.1535204278" value="Девочку">Девочку</label>
@@ -98,7 +110,7 @@
 			<label><input type="radio" name="entry.1366971683" value="Да, с мятой">Да, с мятой</label>
 		  </div>
 		  <div class="radio-inline">
-			<label><input type="radio" name="entry.1366971683" value="Да, с малиной">Да, с малиной</label>
+			<label><input type="radio" name="entry.1366971683" value="Нет">Нет</label>
 		  </div> 			  
 		</div>
 		<div class="form-group" name="entry.1472509286">
@@ -134,22 +146,64 @@
 		
 		<input type="hidden" id="mytext" name="entry.1453480696" value=""/>
         
-
-        <button type="submit" id="sendbtn">Submit</button>
+		<div class="form-group">
+			<button type="submit" id="sendbtn">Сформировать предложение</button>
+		</div>
     </form>
-
-   <script type="text/javascript">
+	<div class="main-form__btns">
+		<button type="button" class="main-form__btn main-form__btn-prev main-form__btn_disable" data-type="prev">Назад</button>
+		<button type="button" class="main-form__btn main-form__btn-next" data-type="next">Далее</button>
 	
-	var mytext = document.getElementById('mytext');
-	var sendbtn = document.getElementById('sendbtn');
+	</div>
+	</div>
 
-	// Отправка сообщения
-	sendbtn.addEventListener('click', function() {
-		mytext.value = 'specialCode';
-		mytext = mytext.value;		
-	});
+<!-- Swiper -->
+  <div class="swiper-container gallery-top">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" style="background-image:url(./images/nature-1.jpg)">Slide 1</div>
+      <div class="swiper-slide" style="background-image:url(./images/nature-2.jpg)">Slide 2</div>
+      <div class="swiper-slide" style="background-image:url(./images/nature-3.jpg)">Slide 3</div>
+      <div class="swiper-slide" style="background-image:url(./images/nature-4.jpg)">Slide 4</div>      
+    </div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next swiper-button-white">туда</div>
+    <div class="swiper-button-prev swiper-button-white">сюда</div>
+  </div>
+  <div class="swiper-container gallery-thumbs">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" style="background-image:url(./images/nature-1.jpg)">Slide 1</div>
+      <div class="swiper-slide" style="background-image:url(./images/nature-2.jpg)">Slide 2</div>
+      <div class="swiper-slide" style="background-image:url(./images/nature-3.jpg)">Slide 3</div>
+      <div class="swiper-slide" style="background-image:url(./images/nature-4.jpg)">Slide 4</div>
+    </div>
+  </div>
 
-	
-	</script>
+  
+
+ 
+
+   <script type="text/javascript" src="vendor/swiper/swiper.min.js"></script>
+   <script type="text/javascript" src="index.js"></script>
+    <!-- Initialize Swiper -->
+  <script>
+    var galleryThumbs = new Swiper('.gallery-thumbs', {
+      spaceBetween: 10,
+      slidesPerView: 4,
+      freeMode: true,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+    });
+    var galleryTop = new Swiper('.gallery-top', {
+      spaceBetween: 10,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      thumbs: {
+        swiper: galleryThumbs
+      }
+    });
+  </script>
+
 </body>
 </html>
