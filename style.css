@@ -19,6 +19,7 @@
 .main-form__btn_disable {
 	opacity: 0.5;
 	transition: .2s ease-in-out;
+	pointer-events: none;
 }
 
 .rate-bar__progress {
