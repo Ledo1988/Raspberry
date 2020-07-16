@@ -30,18 +30,24 @@
 	onload="if(submitted) {window.location.href = 'thanks.html' + '#' + mytext; }"></iframe>
 
 <div class="rate-bar container">
-	<div class="rate-bar__rate">
-		<input type="hidden" id="myRate" value=""/>
-		<label for="myRate" class="rate-bar__rate-amount"><span class="rate-bar__rate-calc">0</span> руб.</label>		
-	</div>
+	<a href="https://www.instagram.com/raspberry__leaf/" class="insta-link">
+		<img src="img/Banner.png">
+	</a>
+	<h1 class="main__title">Собираем «Raspberry Box»</h1>
 	<div class="rate-bar__progress">
 		<span class="rate-bar__done"></span>
 	</div>
+	<div class="rate-bar__rate">
+		<input type="hidden" id="myRate" value=""/>
+		<label for="myRate" class="rate-bar__rate-amount">Ваша цена: <strong></span><span class="rate-bar__rate-calc">0</span> руб.</strong></label>
+	</div>
+
 </div>
 
 <div class="box-img__wrapper container">
+
 	<div class="box-img">
-	
+		<img class="box-img__img" src="img/img__1.jpg">
 	</div>
 </div>
 
@@ -119,23 +125,42 @@
 			<label><input class="radio-inline__input-ice" type="radio" name="entry.1366971683" value="Нет" data-type="negative">Нет</label>
 		  </div> 			  
 		</div>
-		<div class="form-group" name="entry.1472509286">
+		<div class="form-group cards" name="entry.1472509286">
 		  <label for="rsvpStatus" class="col-lg-2 control-label">Несколько слов от сердца</label>
-		  <div class="radio-inline">
-			<label><input type="radio" name="entry.1472509286" value="Привет, малыш!">Привет, малыш!</label>
-		  </div>
-		  <div class="radio-inline">
-			<label><input type="radio" name="entry.1472509286" value="Ура! Мама и Папа!">Ура! Мама и Папа!</label>
-		  </div> 
-  <div class="radio-inline">
-			<label><input type="radio" name="entry.1472509286" value="Рахат-лукум наших сердец">Рахат-лукум наших сердец</label>
-		  </div>
-		  <div class="radio-inline">
-			<label><input type="radio" name="entry.1472509286" value="Солнышко светит ярче!">Солнышко светит ярче!</label>
-		  </div> 
-		  <div class="radio-inline">
-			<label><input type="radio" name="entry.1472509286" value="Счастья будет больше!">Счастья будет больше!</label>
-		  </div> 		  
+			<div class="swiper-container cards-swiper">
+				<div class="swiper-wrapper">
+					<div class="radio-inline swiper-slide">
+						<label>
+							<input type="radio" name="entry.1472509286" value="Привет, малыш!">
+							<img src="img/cards/img_card-2.jpg">
+						</label>
+					</div>
+					<div class="radio-inline swiper-slide">
+						<label>
+							<input type="radio" name="entry.1472509286" value="Ура! Мама и Папа!">
+							<img src="img/cards/img_card-3.jpg">
+						</label>
+					</div>
+					<div class="radio-inline swiper-slide">
+						<label>
+							<input type="radio" name="entry.1472509286" value="Рахат-лукум наших сердец">
+							<img src="img/cards/img_card-1.jpg">
+						</label>
+					</div>
+					<div class="radio-inline swiper-slide">
+						<label><input type="radio" name="entry.1472509286" value="Солнышко светит ярче!">
+							<img src="img/cards/img_card-4.jpg">
+						</label>
+					</div>
+					<div class="radio-inline swiper-slide">
+						<label><input type="radio" name="entry.1472509286" value="Счастья будет больше!">
+							<img src="img/cards/img_card-5.jpg">
+						</label>
+					</div>
+				</div>
+
+			</div>
+
 		</div>
 		<div class="form-group" name="entry.204989116">
 		  <label for="rsvpStatus" class="col-lg-2 control-label">Хочу скидку на RaspberryBox</label>
@@ -163,7 +188,7 @@
 	</div>
 	</div>
 
-<!-- Swiper -->
+<!-- Swiper
   <div class="swiper-container gallery-top">
     <div class="swiper-wrapper">
       <div class="swiper-slide" style="background-image:url(./images/nature-1.jpg)">Slide 1</div>
@@ -171,7 +196,7 @@
       <div class="swiper-slide" style="background-image:url(./images/nature-3.jpg)">Slide 3</div>
       <div class="swiper-slide" style="background-image:url(./images/nature-4.jpg)">Slide 4</div>      
     </div>
-    <!-- Add Arrows -->
+    Add Arrows
     <div class="swiper-button-next swiper-button-white">туда</div>
     <div class="swiper-button-prev swiper-button-white">сюда</div>
   </div>
@@ -182,7 +207,7 @@
       <div class="swiper-slide" style="background-image:url(./images/nature-3.jpg)">Slide 3</div>
       <div class="swiper-slide" style="background-image:url(./images/nature-4.jpg)">Slide 4</div>
     </div>
-  </div>
+  </div> -->
 
   
 
@@ -192,23 +217,13 @@
    <script type="text/javascript" src="index.js"></script>
     <!-- Initialize Swiper -->
   <script>
-    var galleryThumbs = new Swiper('.gallery-thumbs', {
-      spaceBetween: 10,
-      slidesPerView: 4,
+    var cards = new Swiper('.cards-swiper', {
+      spaceBetween: 20,
+      slidesPerView: 'auto',
       freeMode: true,
-      watchSlidesVisibility: true,
-      watchSlidesProgress: true,
+
     });
-    var galleryTop = new Swiper('.gallery-top', {
-      spaceBetween: 10,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      thumbs: {
-        swiper: galleryThumbs
-      }
-    });
+
   </script>
 
 </body>
