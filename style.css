@@ -78,6 +78,7 @@ body {
 	overflow: hidden;
 }
 
+
 .form-group_active {
 	height: auto;	
 	opacity: 1;
@@ -85,6 +86,13 @@ body {
 	z-index: 1;
 	pointer-events: auto;
 	overflow: hidden;
+}
+
+.form-group .control-label {
+	font-size: 16px;
+	font-weight: 400;
+	margin-bottom: 12px;
+	display: block;
 }
 
 .main-form__btns {
@@ -192,4 +200,19 @@ button {
 	max-width: 100%;
 	height: auto;
 	max-height: 265px;
+}
+
+.cards-swiper input {
+	position: absolute;
+	opacity: 0;
+	z-index: -1;
+}
+
+.cards-swiper .img__wrapper {
+	font-size: 0;
+	border: 5px solid transparent;
+}
+
+.cards-swiper input:checked ~ .img__wrapper {
+	border-color: #ffa0af;
 }
