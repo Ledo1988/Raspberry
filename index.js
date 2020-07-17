@@ -25,7 +25,6 @@ function switchForm() {
 	let rateReduce = document.querySelectorAll('.radio-inline__checkbox-percent');
 	rateReduce.forEach(item => {item.addEventListener('click', () => { rateReduceCalc(item) }) });
 
-	
 	function rateReduceCalc(el) {
 
 		let totalPercent = 0;		
@@ -43,7 +42,9 @@ function switchForm() {
 		}
 	}
 	
-	
+	function checkboxCheck () {
+
+	}
 	
 	function iceRateCalc(el) {	
 	
@@ -132,9 +133,7 @@ function switchForm() {
 		if (index == 8) {					
 			rateChange = (el.dataset.type == 'next') ? rateChange - rateReduction: rateChange;
 		}
-		
-	
-		
+
 		progressRate.textContent = rateChange;
 				
 	}
