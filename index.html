@@ -47,7 +47,7 @@
 <div class="box-img__wrapper container">
 
 	<div class="box-img">
-		<img class="box-img__img" src="img/img__1.jpg">
+		<img id="box-img__img" class="box-img__img" src="img/img__1.jpg">
 	</div>
 </div>
 
@@ -71,25 +71,25 @@
 			<label><input type="radio" name="entry.1535204278" value="Родителей">Родителей</label>
 		  </div> 
 		</div>
-		<div class="form-group" name="entry.373006119">
+		<div class="form-group color-choice" name="entry.373006119">
 		  <label for="rsvpStatus" class="col-lg-2 control-label">RaspberryBox будет наполнен ...</label>
 		  <div class="radio-inline">
-			<label><input type="radio" name="entry.373006119" checked value="Лимоном">Лимоном</label>
+			<label><input type="radio" class="radio__color-choice" name="entry.373006119" checked data-color="lemon" value="Лимоном">Лимоном</label>
 		  </div>
 		  <div class="radio-inline">
-			<label><input type="radio" name="entry.373006119" value="Мятой">Мятой</label>
+			<label><input type="radio" class="radio__color-choice" name="entry.373006119" data-color="mint" value="Мятой">Мятой</label>
 		  </div> 
 		  <div class="radio-inline">
-			<label><input type="radio" name="entry.373006119" value="Клубничным вареньем">Клубничным вареньем</label>
+			<label><input type="radio" class="radio__color-choice" name="entry.373006119" data-color="strawberry" value="Клубничным вареньем">Клубничным вареньем</label>
 		  </div> 
 		</div>
 		<div class="form-group" name="entry.675917979">
 		  <label for="rsvpStatus" class="col-lg-2 control-label">Какое мороженое вкуснее?</label>
 		  <div class="radio-inline">
-			<label><input type="radio" name="entry.675917979" checked value="Сливочное">Сливочное</label>
+			<label><input type="radio" name="entry.675917979" checked data-bunny="white" value="Сливочное">Сливочное</label>
 		  </div>
 		  <div class="radio-inline">
-			<label><input type="radio" name="entry.675917979" value="Крем-брюле">Крем-брюле</label>
+			<label><input type="radio" name="entry.675917979" data-bunny="beige" value="Крем-брюле">Крем-брюле</label>
 		  </div> 		
 		</div>
 		<div class="form-group" name="entry.930430066">
@@ -113,16 +113,16 @@
 		<div class="form-group" name="entry.1366971683">
 		  <label for="rsvpStatus" class="col-lg-2 control-label">Добавить мороженое?</label>
 		  <div class="radio-inline">
-			<label><input class="radio-inline__input-ice" type="radio" checked name="entry.1366971683" value="Да, с лимоном" data-type="positive">Да, с лимоном</label>
+			<label><input class="radio-inline__input-ice" type="radio" data-ice="lemon" checked name="entry.1366971683" value="Да, с лимоном" data-type="positive">Да, с лимоном</label>
 		  </div>
 		  <div class="radio-inline">
-			<label><input class="radio-inline__input-ice" type="radio" name="entry.1366971683" value="Да, с малиной" data-type="positive">Да, с малиной</label>
+			<label><input class="radio-inline__input-ice" type="radio" data-ice="raspberry" name="entry.1366971683" value="Да, с малиной" data-type="positive">Да, с малиной</label>
 		  </div> 
 		<div class="radio-inline">
-			<label><input class="radio-inline__input-ice" type="radio" name="entry.1366971683" value="Да, с мятой" data-type="positive">Да, с мятой</label>
+			<label><input class="radio-inline__input-ice" type="radio" data-ice="mint" name="entry.1366971683" value="Да, с мятой" data-type="positive">Да, с мятой</label>
 		  </div>
 		  <div class="radio-inline">
-			<label><input class="radio-inline__input-ice" type="radio" name="entry.1366971683" value="Нет" data-type="negative">Нет</label>
+			<label><input class="radio-inline__input-ice" type="radio" data-ice="" name="entry.1366971683" value="Нет" data-type="negative">Нет</label>
 		  </div> 			  
 		</div>
 		<div class="form-group cards" name="entry.1472509286">

@@ -25,6 +25,44 @@ function switchForm() {
 	let rateReduce = document.querySelectorAll('.radio-inline__checkbox-percent');
 	rateReduce.forEach(item => {item.addEventListener('click', () => { rateReduceCalc(item) }) });
 
+	let colorChoice = document.querySelectorAll('.radio__color-choice');
+	colorChoice.forEach(item => {item.addEventListener('click', () => { imageChoice(item) }) });
+
+	let currentImg = document.getElementById('box-img__img');
+
+	//Color for Image change
+	let imgColor = {
+		elColor: 'lemon',
+		bunnyColor: 'white',
+		iceColor: 'lemon',
+	}
+
+	function imageChoice(el) {
+
+		if (el.checked && el.hasAttribute("data-color")) {
+			imgColor.elColor =  el.dataset.color;
+		} else if (el.checked && el.hasAttribute("data-bunny")) {
+			imgColor.bunnyColor = el.dataset.bunny;
+		} else if (el.checked && el.hasAttribute("data-ice")) {
+			imgColor.iceColor = el.dataset.ice;
+		}
+
+		return imgColor;
+
+	}
+
+	function imgGenerator (color, index) {
+
+		if (index > 1) {
+			currentImg.src = "img/" + color.elColor + "/img__" + color.elColor + color.bunnyColor + color.iceColor + index + ".jpg"
+		}
+
+
+
+
+	}
+
+
 	function rateReduceCalc(el) {
 
 		let totalPercent = 0;		
@@ -42,10 +80,7 @@ function switchForm() {
 		}
 	}
 	
-	function checkboxCheck () {
 
-	}
-	
 	function iceRateCalc(el) {	
 	
 		if (el && el.checked && el.dataset.type == 'positive') {
@@ -100,10 +135,9 @@ function switchForm() {
 			if (i == index)
 				items[i].className += " form-group_active";
 			
-        } 
-		
-			
-		if (index == 0) {					
+        }
+
+		if (index == 0) {
 			rateChange = (el.dataset.type == 'next') ? 0: rateChange - 150;
 		}		
 		if (index == 1) {					
@@ -135,6 +169,8 @@ function switchForm() {
 		}
 
 		progressRate.textContent = rateChange;
+
+		imgGenerator(imgColor, index);
 				
 	}
 	
