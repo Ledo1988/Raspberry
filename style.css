@@ -200,6 +200,7 @@ button {
 	max-width: 100%;
 	height: auto;
 	max-height: 265px;
+	border: 5px solid transparent;
 }
 
 .cards-swiper input {
@@ -208,11 +209,6 @@ button {
 	z-index: -1;
 }
 
-.cards-swiper .img__wrapper {
-	font-size: 0;
-	border: 5px solid transparent;
-}
-
-.cards-swiper input:checked ~ .img__wrapper {
+.cards-swiper input:checked ~ img {
 	border-color: #ffa0af;
 }
