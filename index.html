@@ -86,10 +86,10 @@
 		<div class="form-group" name="entry.675917979">
 		  <label for="rsvpStatus" class="col-lg-2 control-label">Какое мороженое вкуснее?</label>
 		  <div class="radio-inline">
-			<label><input type="radio" name="entry.675917979" checked data-bunny="white" value="Сливочное">Сливочное</label>
+			<label><input type="radio" class="radio__color-choice" name="entry.675917979" checked data-bunny="white" value="Сливочное">Сливочное</label>
 		  </div>
 		  <div class="radio-inline">
-			<label><input type="radio" name="entry.675917979" data-bunny="beige" value="Крем-брюле">Крем-брюле</label>
+			<label><input type="radio" class="radio__color-choice" name="entry.675917979" data-bunny="beige" value="Крем-брюле">Крем-брюле</label>
 		  </div> 		
 		</div>
 		<div class="form-group" name="entry.930430066">
@@ -113,16 +113,16 @@
 		<div class="form-group" name="entry.1366971683">
 		  <label for="rsvpStatus" class="col-lg-2 control-label">Добавить мороженое?</label>
 		  <div class="radio-inline">
-			<label><input class="radio-inline__input-ice" type="radio" data-ice="lemon" checked name="entry.1366971683" value="Да, с лимоном" data-type="positive">Да, с лимоном</label>
+			<label><input class="radio-inline__input-ice radio__color-choice" type="radio" data-ice="lemon" checked name="entry.1366971683" value="Да, с лимоном" data-type="positive">Да, с лимоном</label>
 		  </div>
 		  <div class="radio-inline">
-			<label><input class="radio-inline__input-ice" type="radio" data-ice="raspberry" name="entry.1366971683" value="Да, с малиной" data-type="positive">Да, с малиной</label>
+			<label><input class="radio-inline__input-ice radio__color-choice" type="radio" data-ice="raspberry" name="entry.1366971683" value="Да, с малиной" data-type="positive">Да, с малиной</label>
 		  </div> 
 		<div class="radio-inline">
-			<label><input class="radio-inline__input-ice" type="radio" data-ice="mint" name="entry.1366971683" value="Да, с мятой" data-type="positive">Да, с мятой</label>
+			<label><input class="radio-inline__input-ice radio__color-choice" type="radio" data-ice="mint" name="entry.1366971683" value="Да, с мятой" data-type="positive">Да, с мятой</label>
 		  </div>
 		  <div class="radio-inline">
-			<label><input class="radio-inline__input-ice" type="radio" data-ice="" name="entry.1366971683" value="Нет" data-type="negative">Нет</label>
+			<label><input class="radio-inline__input-ice radio__color-choice" type="radio" data-ice="" name="entry.1366971683" value="Нет" data-type="negative">Нет</label>
 		  </div> 			  
 		</div>
 		<div class="form-group cards" name="entry.1472509286">
@@ -131,29 +131,29 @@
 				<div class="swiper-wrapper">
 					<div class="radio-inline swiper-slide">
 						<label>
-							<input type="radio" checked name="entry.1472509286" value="Привет, малыш!">
+							<input type="radio" class="radio__color-choice" data-card="hi" checked name="entry.1472509286" value="Привет, малыш!">
+							<img src="img/cards/img_card-1.jpg">
+						</label>
+					</div>
+					<div class="radio-inline swiper-slide">
+						<label>
+							<input type="radio" class="radio__color-choice" data-card="parents" name="entry.1472509286" value="Ура! Мама и Папа!">
 							<img src="img/cards/img_card-2.jpg">
 						</label>
 					</div>
 					<div class="radio-inline swiper-slide">
 						<label>
-							<input type="radio" name="entry.1472509286" value="Ура! Мама и Папа!">
+							<input type="radio" name="entry.1472509286" class="radio__color-choice" data-card="rahat" value="Рахат-лукум наших сердец">
 							<img src="img/cards/img_card-3.jpg">
 						</label>
 					</div>
 					<div class="radio-inline swiper-slide">
-						<label>
-							<input type="radio" name="entry.1472509286" value="Рахат-лукум наших сердец">
-							<img src="img/cards/img_card-1.jpg">
-						</label>
-					</div>
-					<div class="radio-inline swiper-slide">
-						<label><input type="radio" name="entry.1472509286" value="Солнышко светит ярче!">
+						<label><input type="radio" name="entry.1472509286" class="radio__color-choice" data-card="sun" value="Солнышко светит ярче!">
 							<img src="img/cards/img_card-4.jpg">
 						</label>
 					</div>
 					<div class="radio-inline swiper-slide">
-						<label><input type="radio" name="entry.1472509286" value="Счастья будет больше!">
+						<label><input type="radio" name="entry.1472509286" class="radio__color-choice" data-card="happy" value="Счастья будет больше!">
 							<img src="img/cards/img_card-5.jpg">
 						</label>
 					</div>
@@ -188,28 +188,7 @@
 	</div>
 	</div>
 
-<!-- Swiper
-  <div class="swiper-container gallery-top">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide" style="background-image:url(./images/nature-1.jpg)">Slide 1</div>
-      <div class="swiper-slide" style="background-image:url(./images/nature-2.jpg)">Slide 2</div>
-      <div class="swiper-slide" style="background-image:url(./images/nature-3.jpg)">Slide 3</div>
-      <div class="swiper-slide" style="background-image:url(./images/nature-4.jpg)">Slide 4</div>      
-    </div>
-    Add Arrows
-    <div class="swiper-button-next swiper-button-white">туда</div>
-    <div class="swiper-button-prev swiper-button-white">сюда</div>
-  </div>
-  <div class="swiper-container gallery-thumbs">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide" style="background-image:url(./images/nature-1.jpg)">Slide 1</div>
-      <div class="swiper-slide" style="background-image:url(./images/nature-2.jpg)">Slide 2</div>
-      <div class="swiper-slide" style="background-image:url(./images/nature-3.jpg)">Slide 3</div>
-      <div class="swiper-slide" style="background-image:url(./images/nature-4.jpg)">Slide 4</div>
-    </div>
-  </div> -->
 
-  
 
  
 

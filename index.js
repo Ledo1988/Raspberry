@@ -1,9 +1,11 @@
 // Отправка кода между страницами
 let mytext = document.getElementById('mytext');
 let sendbtn = document.getElementById('sendbtn');
+let specialCode;
+
 
 sendbtn.addEventListener('click', function() {
-	mytext.value = 'specialCode';
+	mytext.value = specialCode;
 	mytext = mytext.value;		
 });
 
@@ -26,7 +28,7 @@ function switchForm() {
 	rateReduce.forEach(item => {item.addEventListener('click', () => { rateReduceCalc(item) }) });
 
 	let colorChoice = document.querySelectorAll('.radio__color-choice');
-	colorChoice.forEach(item => {item.addEventListener('click', () => { imageChoice(item) }) });
+	colorChoice.forEach(item => {item.addEventListener('click', () => { imageChoice(item, index) }) });
 
 	let currentImg = document.getElementById('box-img__img');
 
@@ -35,31 +37,63 @@ function switchForm() {
 		elColor: 'lemon',
 		bunnyColor: 'white',
 		iceColor: 'lemon',
+		postCard: 'hi',
+	};
+
+	function makeid(length) {
+		var result           = '';
+		var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+		var charactersLength = characters.length;
+		for ( var i = 0; i < length; i++ ) {
+			result += characters.charAt(Math.floor(Math.random() * charactersLength));
+		}
+		return result;
 	}
 
-	function imageChoice(el) {
+	function specialCodeGen (imgColor) {
+		specialCode = 'C' + imgColor.elColor + '-' + 'B' + imgColor.bunnyColor + '-' + 'I' + imgColor.iceColor + '-' + 'P' + imgColor.postCard  + '-' + makeid(5);
+		return specialCode;
+	}
+
+	function imageChoice(el, index) {
 
 		if (el.checked && el.hasAttribute("data-color")) {
 			imgColor.elColor =  el.dataset.color;
 		} else if (el.checked && el.hasAttribute("data-bunny")) {
 			imgColor.bunnyColor = el.dataset.bunny;
+			console.log(imgColor.bunnyColor);
 		} else if (el.checked && el.hasAttribute("data-ice")) {
 			imgColor.iceColor = el.dataset.ice;
+		} else if (el.checked && el.hasAttribute("data-card")) {
+			imgColor.postCard = el.dataset.card;
 		}
+
+		imgGenerator (imgColor, index);
 
 		return imgColor;
 
 	}
 
 	function imgGenerator (color, index) {
-
-		if (index > 1) {
-			currentImg.src = "img/" + color.elColor + "/img__" + color.elColor + color.bunnyColor + color.iceColor + index + ".jpg"
+		if (index < 1) {
+			currentImg.src = "img/img__1.jpg";
 		}
-
-
-
-
+		else if (index == 1) {
+			currentImg.src = "img/" + color.elColor + "/img__" + color.elColor + '-' + (1 + index) + ".jpg";
+		} else if (index > 1 && index < 5 ) {
+			currentImg.src = "img/" + color.elColor + "/img__" + color.elColor + '-' + color.bunnyColor + '-' + (1 + index) + ".jpg";
+		}
+		else if (index == 5) {
+			if (!imgColor.iceColor == '') {
+				currentImg.src = "img/" + color.elColor + "/img__" + color.elColor + '-' + color.bunnyColor + '-' + (1 + index) +'-' + color.iceColor  + ".jpg";
+			} else {
+				currentImg.src = "img/" + color.elColor + "/img__" + color.elColor + '-' + color.bunnyColor + '-' + index + ".jpg";
+			}
+		} else if (index == 6) {
+			currentImg.src = "img/boxCards/img__7-" + color.postCard  + ".jpg";
+		} else if (index > 6) {
+			currentImg.src = "img/img__8.jpg";
+		}
 	}
 
 
@@ -171,6 +205,10 @@ function switchForm() {
 		progressRate.textContent = rateChange;
 
 		imgGenerator(imgColor, index);
+
+		specialCodeGen(imgColor);
+
+		return index;
 				
 	}
 	
