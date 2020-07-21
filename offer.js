@@ -49,4 +49,5 @@ function generateOffer (item) {
 	resultRate.textContent = item.rate;
 }
 
-//generateOffer(specailObj);
+generateOffer(specailObj);
+
