@@ -1,7 +1,11 @@
-var resultImage = document.getElementById('box-img__img');
-var resultCard = document.getElementById('box-img__img-card');
-var resultRate = document.getElementById('rate-calc');
-let specialCode = window.location.hash;
+let resultImage = document.getElementById('box-img__img');
+let resultCard = document.getElementById('box-img__img-card');
+let resultRate = document.getElementById('rate-calc');
+let specialCodeHref = window.location.hash;
+let specialCodeCookie;
+let specialCode;
+
+specialCodeHref = specialCodeHref.slice(1);
 
 function getCookie(name) {
 	let matches = document.cookie.match(new RegExp(
@@ -10,7 +14,13 @@ function getCookie(name) {
 	return matches ? decodeURIComponent(matches[1]) : undefined;
 }
 
-specialCode = getCookie('raspberryBox');
+specialCodeCookie = getCookie('raspberryBox');
+
+if (specialCodeCookie !== null) {
+	specialCode = specialCodeCookie;
+} else {
+	specialCode = specialCodeHref;
+}
 
 let specialArr = specialCode.split('-');
 
@@ -39,4 +49,4 @@ function generateOffer (item) {
 	resultRate.textContent = item.rate;
 }
 
-generateOffer(specailObj);
+//generateOffer(specailObj);
