@@ -3,6 +3,15 @@ var resultCard = document.getElementById('box-img__img-card');
 var resultRate = document.getElementById('rate-calc');
 let specialCode = window.location.hash;
 
+function getCookie(name) {
+	let matches = document.cookie.match(new RegExp(
+		"(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+	));
+	return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
+console.log(getCookie('raspberryBox'));
+
 specialCode = specialCode.slice(1);
 
 let specialArr = specialCode.split('-');
@@ -32,4 +41,4 @@ function generateOffer (item) {
 	resultRate.textContent = item.rate;
 }
 
-generateOffer(specailObj);
+//generateOffer(specailObj);
