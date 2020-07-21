@@ -16,7 +16,7 @@ function getCookie(name) {
 
 specialCodeCookie = getCookie('raspberryBox');
 
-if (specialCodeCookie !== null) {
+if (specialCodeCookie !== undefined) {
 	specialCode = specialCodeCookie;
 } else {
 	specialCode = specialCodeHref;
