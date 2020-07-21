@@ -10,9 +10,7 @@ function getCookie(name) {
 	return matches ? decodeURIComponent(matches[1]) : undefined;
 }
 
-console.log(getCookie('raspberryBox'));
-
-specialCode = specialCode.slice(1);
+specialCode = getCookie('raspberryBox');
 
 let specialArr = specialCode.split('-');
 
@@ -41,4 +39,4 @@ function generateOffer (item) {
 	resultRate.textContent = item.rate;
 }
 
-//generateOffer(specailObj);
+generateOffer(specailObj);
