@@ -9,29 +9,46 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 	<!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-   ym(65542039, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-   });
+   function myFunction() {
+	   /* Get the text field */
+	  let copyText = document.getElementById("mytextResult");
+
+	   /* Select the text field */
+	   copyText.select();
+	   copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+	   /* Copy the text inside the text field */
+	   document.execCommand("copy");
+
+	   window.location.href = 'https://www.instagram.com/raspberry__leaf/';
+   }
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/65542039" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 </head>
-<body>
+<body class="page">
+	<div class="rate-bar container">
+		<a href="https://www.instagram.com/raspberry__leaf/" class="insta-link">
+			<img src="img/Banner.png">
+		</a>
+		<h1 class="main__title">Спасибо за отправку формы!</h1>
+		<div class="promocode">
+			<div class="promocode__title">
+				<input id="mytextResult" class="thanks-input" value=""/>
+				Ваш код на скидку: <span id="result" class="promocode__result"></span>
+			</div>
+			<div class="promocode__desc">
+				<p>Скопируйте код и отправьте его в директ.</p>
+				<p>*Предложение действительно в течение <strong>24 часов</strong></p>
+			</div>
 
-	
-	Спасибо за отправку формы!
-	
-	Ваш код на скидку: <span id="result"></span>
-	
+			<button type="button" onclick="myFunction()" class="main-form__btn">Скопировать и вернуться в Инстаграм</button>
+
+		</div>
+
+	</div>
+
 	<script type="text/javascript" src="thanks.js"></script>
-
-   
 </body>
 </html>

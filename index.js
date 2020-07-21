@@ -145,9 +145,7 @@ function switchForm() {
 			
 			if (index == items.length - 1) {
 				el.className += " main-form__btn_disable";
-			} 
-				
-			
+			}
 		}
 		
 		if (el.dataset.type == 'prev') {			
@@ -156,8 +154,7 @@ function switchForm() {
 			
 			if (index == 0) {
 				el.className += " main-form__btn_disable";
-			} 		
-			
+			}
         }
 				
 		progressBar.style.width = index/(items.length - 1)*100 + '%';
@@ -211,10 +208,6 @@ function switchForm() {
 		return index;
 				
 	}
-	
-	
-	
-	
 }
 
 switchForm();
