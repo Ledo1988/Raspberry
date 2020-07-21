@@ -353,3 +353,21 @@ input[type='radio'] {}
     pointer-events: none;
     position: absolute;
 }
+
+.box-img.card {
+    margin-top: 12px;
+}
+
+.offer .rate-bar__rate {
+    text-align: center;
+}
+
+.offer .main-form__btn {
+    display: block;
+    margin: 0 auto;
+    text-decoration: none;
+}
+
+.offer .rate-bar__rate-amount {
+    margin-bottom: 24px;
+}

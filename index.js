@@ -20,7 +20,10 @@ function switchForm() {
     let nextButton = document.getElementsByClassName('main-form__btn-next')[0];
 	prevButton.addEventListener('click', function() { go(this); }, false);
     nextButton.addEventListener('click', function() { go(this); }, false);
-	
+
+	let progressBar = document.getElementsByClassName('rate-bar__done')[0];
+	let progressRate = document.getElementsByClassName('rate-bar__rate-calc')[0];
+
 	let iceAdd = document.querySelectorAll('.radio-inline__input-ice');
 	iceAdd.forEach(item => {item.addEventListener('click', () => { iceRateCalc(item) }) });
 	
@@ -51,7 +54,7 @@ function switchForm() {
 	}
 
 	function specialCodeGen (imgColor) {
-		specialCode = 'C' + imgColor.elColor + '-' + 'B' + imgColor.bunnyColor + '-' + 'I' + imgColor.iceColor + '-' + 'P' + imgColor.postCard  + '-' + makeid(5);
+		specialCode = 'C' + imgColor.elColor + '-' + 'B' + imgColor.bunnyColor + '-' + 'I' + imgColor.iceColor + '-' + 'P' + imgColor.postCard  + '-'+'R' + progressRate.textContent + '-Q' + makeid(5);
 		return specialCode;
 	}
 
@@ -131,8 +134,7 @@ function switchForm() {
 		let finalRate = 3785;
 		let buttons = document.querySelectorAll(".main-form__btn");
 		let items = document.querySelectorAll(".main-form .form-group");
-		let progressBar = document.getElementsByClassName('rate-bar__done')[0];
-		let progressRate = document.getElementsByClassName('rate-bar__rate-calc')[0];		
+
 		
 		for(let i = 0; i < buttons.length; i++) {			 
 			  buttons[i].classList.remove('main-form__btn_disable');
